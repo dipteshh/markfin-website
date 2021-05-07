@@ -1,0 +1,206 @@
+:root {
+  --primary: #FFCE00;
+  --secondary: #FE4880;
+  --dark: #212121;
+  --light: #F3F3F3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: montserrat, sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #17141d;
+}
+
+.card-list{
+  display: flex;
+  padding: 5rem;
+  overflow-x: hidden;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.card-list::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.card-list::-webkit-scrollbar-thumb {
+  background: #201c29;
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+}
+
+.card-list::-webkit-scrollbar-track {
+  background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
+}
+
+.card {
+  margin:;
+  width: 40%;
+  height: 60vh;
+  perspective: 1000px;
+  transition: .2s;
+}
+
+.card-inner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+
+
+  border-radius: 16px;
+  background: #17141d;
+  box-shadow:-1rem 0 3rem #000;
+  transition: .2s;
+  margin: 0;
+
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+
+.card:focus-within~.card, .card:hover~.card {
+  transform: translateX(130px);
+}
+.card:hover{
+  transform: translateY(-1rem);
+}
+
+.card:not(:first-child){
+  margin-left: -130px;
+}
+
+.card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card-face--front main p {
+  color: white;
+  font-size: 3vh;
+  margin: 0 1rem;
+}
+.card-face--front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card-face--front h2 {
+  color: #FFF;
+  font-size: 32px;
+}
+
+.card-face--back {
+  background-color: var(--light);
+  transform: rotateY(180deg);
+}
+
+.card__content {
+  width: 100%;
+  height: 100%;
+}
+
+.card-header {
+  position: relative;
+  padding: 10px 30px 10px;
+}
+
+.card-header h2 {
+  color: #FFF;
+
+  text-align: center;
+}
+
+.card-face--front img{
+  margin: 5% 0;
+  width: 100%;
+  height: 20%;
+}
+
+.card__body {
+  padding: 30px;
+}
+
+.card__body h3 {
+  color: var(--dark);
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.card__body p {
+  color: var(--dark);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.calc-btn {
+  width: 100%;
+  height: 10%;
+  line-height: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calc-btn a {
+  height: 100%;
+  font-style: normal;
+  font-weight: 700;
+  font-size: .5rem;
+  color: #7a7a8c;
+  text-transform: uppercase;
+  font-size: .66rem;
+  border: 3px solid #28242f;
+  border-radius: 2rem;
+  padding: .1rem 1rem ;
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.calc-btn a:hover {
+  background: linear-gradient(90deg,#ff8a00,#e52e71);
+  text-shadow: none;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-box-decoration-break: clone;
+  background-clip: text;
+  border-color: white;
+}
+
+.card-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card-content input{
+  margin: 5% 0;
+}
+#total:hover{
+  cursor: pointer;
+}
